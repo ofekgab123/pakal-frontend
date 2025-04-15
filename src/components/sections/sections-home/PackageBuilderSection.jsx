@@ -65,7 +65,7 @@ const PackageBuilderSection = ({ items = [], startIndex = 0, onPrev, onNext }) =
 
       <Button
         variant="contained"
-        href="/build-package"
+        href="/order"
         sx={{
           mt: 4,
           borderRadius: '50px',
