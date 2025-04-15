@@ -1,4 +1,4 @@
-PackageBuilderSection
+---------------PackageBuilderSection--------
 
 items: [
   { title: string, link: string, img: string }
@@ -8,7 +8,7 @@ onNext: function
 onPrev: function
 
 
-use:
+------use:-------------------------------
 <PackageBuilderSection
   items={[
     { title: 'חבילה 1', link: '/p1', img: '/images/1.jpg' },
@@ -20,20 +20,20 @@ use:
   onPrev={() => setIndex(i => i - 1)}
 />
 
+-----------------------------------
 
 
 
 
 
 
-
-Slider
+-------------------Slider----------------------------
 
 logos: [string], // רשימת URL של תמונות
 imageHeight?: number
 imageWidth?: number | string
 
-use:
+-------------------------use:------------------------
 <PartnersSlider
   logos={[
     '/logo1.png',
@@ -44,13 +44,13 @@ use:
   imageWidth="auto"
 />
 
+-----------------------------------------------------
+
+-
 
 
 
-
-
-
-UpdatesSection
+----------------UpdatesSection---------------------
 
 items: [
   { img: string, title: string, description: string }
@@ -58,7 +58,7 @@ items: [
 title?: string
 subtitle?: string
 
-use:
+---------------------use:---------------------------
 <UpdatesSection
   title="עדכונים אחרונים"
   subtitle="חדשות ועדכונים"
@@ -71,12 +71,12 @@ use:
     ...
   ]}
 />
+-------------------------------
 
 
 
 
-
-ProductPAge-ProductFAQ
+----------------------ProductPAge-ProductFAQ----------------
 
 
 featureGroups: [
@@ -95,7 +95,7 @@ collapses: [
 
 title?: string             // כותרת של הסקשן כולו
 
-
+------------------use:------------------------------
 use:
 <ProductFAQ
   title="תכונות ודגשים"
@@ -123,8 +123,8 @@ use:
 />
 
 
-
-
+----------------------------------
+--------------------------
 
 <ReviewsSection
   title="ביקורות על השירות"
@@ -145,7 +145,7 @@ use:
   ]}
 />
 
-
+--------------------------------------------------------
 
 
 order
@@ -169,7 +169,7 @@ order
   ]}
 />
 
-
+---------------------------------------------
 
 payment: {
   cardName: string,           // שם בעל הכרטיס
@@ -179,7 +179,7 @@ payment: {
 }
 
 
-
+---------------------------------
 
 
 
