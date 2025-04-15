@@ -1,70 +1,189 @@
-# Getting Started with Create React App
+PackageBuilderSection
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+items: [
+  { title: string, link: string, img: string }
+]
+startIndex: number
+onNext: function
+onPrev: function
 
-## Available Scripts
 
-In the project directory, you can run:
+use:
+<PackageBuilderSection
+  items={[
+    { title: 'חבילה 1', link: '/p1', img: '/images/1.jpg' },
+    { title: 'חבילה 2', link: '/p2', img: '/images/2.jpg' },
+    ...
+  ]}
+  startIndex={index}
+  onNext={() => setIndex(i => i + 1)}
+  onPrev={() => setIndex(i => i - 1)}
+/>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Slider
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+logos: [string], // רשימת URL של תמונות
+imageHeight?: number
+imageWidth?: number | string
 
-### `npm run eject`
+use:
+<PartnersSlider
+  logos={[
+    '/logo1.png',
+    '/logo2.png',
+    ...
+  ]}
+  imageHeight={60}
+  imageWidth="auto"
+/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+UpdatesSection
 
-### Code Splitting
+items: [
+  { img: string, title: string, description: string }
+]
+title?: string
+subtitle?: string
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+use:
+<UpdatesSection
+  title="עדכונים אחרונים"
+  subtitle="חדשות ועדכונים"
+  items={[
+    {
+      img: '/news1.jpg',
+      title: 'מבצע חדש',
+      description: 'החל ממחר ניתן להזמין...',
+    },
+    ...
+  ]}
+/>
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+ProductPAge-ProductFAQ
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+featureGroups: [
+  { label: string, available: boolean }
+]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+collapses: [
+  {
+    image: string,          // תמונה עגולה להצגה לפני הפתיחה
+    title: string,          // כותרת קצרה של הפריט
+    description: string,    // תיאור קצר לפני פתיחה
+    details: string,        // תוכן מלא שמופיע לאחר פתיחה
+    fullImage?: string      // תמונה נלווית (בגדול) שמופיעה בתוך הקולאפס (לא חובה)
+  }
+]
 
-### `npm run build` fails to minify
+title?: string             // כותרת של הסקשן כולו
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+use:
+<ProductFAQ
+  title="תכונות ודגשים"
+  featureGroups={[
+    { label: 'Wi-Fi חינם', available: true },
+    { label: 'חניה', available: false },
+    { label: 'בריכה פרטית', available: true },
+  ]}
+  collapses={[
+    {
+      image: '/villa-thumb.jpg',
+      title: 'וילה בגליל העליון',
+      description: 'בריכה, נוף, ג׳קוזי',
+      details: 'וילה יוקרתית עם בריכה פרטית וג׳קוזי...',
+      fullImage: '/villa-full.jpg',
+    },
+    {
+      image: '/spa-thumb.jpg',
+      title: 'ספא מפנק',
+      description: 'עיסוי וטיפול זוגי',
+      details: 'חבילת עיסוי מושלמת עם ג׳קוזי וטיפול זוגי...',
+      fullImage: '/spa-full.jpg',
+    },
+  ]}
+/>
+
+
+
+
+
+<ReviewsSection
+  title="ביקורות על השירות"
+  reviews={[
+    {
+      avatar: '/avatars/user1.jpg',
+      name: 'רות כהן',
+      rating: 5,
+      text: 'חוויה מדהימה, השירות היה מצוין והחדרים נקיים ונעימים.',
+    },
+    {
+      avatar: '/avatars/user2.jpg',
+      name: 'יוסי לוי',
+      rating: 4,
+      text: 'המקום היה מקסים, אבל האוכל יכול להיות יותר טוב.',
+    },
+    ...
+  ]}
+/>
+
+
+
+
+order
+
+<OrderHeroSecetion
+  vacations={[
+    {
+      id: 1,
+      title: 'וילה בגליל העליון',
+      img: '/villa.jpg',
+      area: 'צפון',
+      eligible: true,
+      breakfastIncluded: true,
+      hasPool: true,
+      category: 'חופשות',
+      rating: 4.7,
+      reviews: 123,
+      price: 1200
+    },
+    // ...עוד חופשות
+  ]}
+/>
+
+
+
+payment: {
+  cardName: string,           // שם בעל הכרטיס
+  cardNumber: string,         // מספר כרטיס (מוסתר לפני שליחה/מוצפן)
+  expiry: string,             // תוקף MM/YY
+  cvv: string                 // קוד אימות
+}
+
+
+
+
+
+
+
+
+npm i 
+localhost:3000
